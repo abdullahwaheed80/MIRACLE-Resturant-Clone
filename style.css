@@ -1,0 +1,671 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Base layout */
+body {
+  background-color: #870000;
+  font-family: monospace, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue';
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  color: #fcffdd;
+}
+
+.pill-nav-container {
+  position: fixed;
+  top: 18px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+  transform: scale(1);   
+  transition: transform 0.5s ease-out; 
+  
+  backface-visibility: hidden;
+  cursor: pointer;
+}
+.pill-nav-container:hover {
+  transform: scale(1.05);
+}
+
+
+.pill-nav {
+  background: rgba(252, 255, 221, 0.12);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(252, 255, 221, 0.22);
+  border-radius: 50px;
+  padding: 10px 20px;
+  margin: 0 12px;
+  max-width: calc(100% - 36px);
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0 6px;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: #fcffdd;
+  font-family: monospace;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 1rem;
+  transition: color 0.25s ease;
+  padding: 6px 8px;
+  display: inline-block;
+}
+
+.nav-list a:hover {
+  color: white;
+  text-shadow: 0 0 8px #fcffdd;
+}
+
+.first-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.upper-background-img {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('images/indian\ food\ moody\ photography_\ Food\ photographer\ in\ Melbourne\,\ Australia.jfif');
+  background-size: cover;
+  background-position: center;
+  border-radius: 80px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 90px auto 40px;
+  padding: 48px 20px;
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+  transition: transform 0.5s ease;
+}
+
+.upper-background-img:hover {
+  transform: scale(1.03);
+}
+
+.logo {
+  width: 60%;
+  max-width: 420px;
+  height: auto;
+  margin-bottom: 20px;
+  transform: scale(1);
+
+  transition: transform 0.3s ease-out;
+  backface-visibility: hidden;
+  cursor: pointer;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.under-text h1 {
+  color: #fcffdd;
+  font-size: clamp(1.5rem, 4.5vw, 2.6rem);
+  font-weight: 800;
+  margin: 0 0 3px 0;
+}
+
+.booking-btn {
+  border: 1px solid #870000;
+  border-radius: 50px;
+  background-color: #fcffdd;
+  color: #870000;
+  font-size: 16px;
+  font-weight: 800;
+  padding: 12px 28px;
+  cursor: pointer;
+  margin: 18px 0 0;
+  transition: transform 0.5s;
+}
+
+.booking-btn:hover {
+  transform: scale(1.2);
+  background-color: #870000;
+  color: #fcffdd;
+}
+
+.col-12 {
+  display: flex;
+  justify-content: center;
+}
+
+.food-card {
+  border-radius: 50px;
+  position: relative;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 460px;
+  transform: scale(1);
+
+  transition: transform 0.5s ease-out;
+
+  backface-visibility: hidden;
+  cursor: pointer;
+
+  animation: appear ease-out;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+  animation-fill-mode: forwards;
+}
+
+.food-card:hover {
+  transform: scale(1.03);
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    scale: 0.9;
+  }
+
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+.rounded-image {
+  border-radius: 24px;
+  width: 100%;
+  height: auto;
+  max-height: 520px;
+  object-fit: cover;
+}
+
+.pill-label {
+  position: absolute;
+  bottom: 18px;
+  left: 38%;
+  transform: translateX(-50%);
+  background-color: #fcffdd;
+  color: #870000;
+  padding: 10px 28px;
+  border-radius: 50px;
+  border: none;
+  font-family: monospace;
+  font-weight: 900;
+  z-index: 5;
+  transform: scale(1);
+
+  transition: transform 0.5s ease-out;
+
+  backface-visibility: hidden;
+  cursor: pointer;
+
+}
+
+.pill-label:hover {
+  transform: scale(1.2);
+  background-color: #870000;
+  color: #fcffdd;
+}
+
+.blog-img {
+  border-radius: 40px;
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: cover;
+}
+
+.blog-background-img {
+  background-size: cover;
+  background-position: center;
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 30px;
+  padding: 36px 20px;
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+
+  transform: scale(1);
+
+  transition: transform 0.5s ease-out;
+
+  backface-visibility: hidden;
+  cursor: pointer;
+
+}
+
+.blog-background-img:hover {
+  transform: scale(1.02);
+}
+
+
+.blog-btn {
+  border: 1px solid #870000;
+  border-radius: 50px;
+  background-color: #fcffdd;
+  color: #870000;
+  font-weight: 800;
+  padding: 12px 28px;
+  cursor: pointer;
+  margin-top: -80px;
+  transition: transform 0.5s;
+}
+
+.blog-btn:hover {
+  transform: scale(1.2);
+  background-color: #870000;
+  color: #fcffdd;
+}
+
+.lower-three-cards {
+  background-color: #870000;
+  padding: 36px 0px;
+  animation: appear ease-out;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+  animation-fill-mode: forwards;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+.lower-three-cards{
+  background-color: #870000;
+  padding: 50px 20px;
+   animation: appear  ease-out;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+  animation-fill-mode: forwards;
+}
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* The card container */
+.lower-background-img {
+  position: relative;
+  height: 350px;       /* ITS USED FOR Controlled height */
+  width: 380px;
+  max-width: 600px;
+  border-radius: 40px; 
+  overflow: hidden;  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s ease;
+  cursor: pointer;
+}
+
+.lower-background-img:hover {
+  transform: scale(1.06);
+}
+
+/* The Image inside */
+.lower-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.lower-btn {
+  position: relative;
+  z-index: 2;
+  border: 1px solid #870000;
+  border-radius: 50px;
+  background-color: #f5e6cc;
+  color: #870000;
+  font-size: 18px;
+  font-weight: 800;
+  padding: 10px 26px;
+  width: auto;
+  transition: all 0.5s ease;
+  margin-top: 252px;
+}
+
+.lower-btn:hover {
+  background-color: #870000;
+  color: #f5e6cc;
+  transform: scale(1.2);
+}
+
+.newsletter-section {
+  background-color: #95D4D3;
+  border-radius: 40px;
+  padding: 55px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1120px;
+  margin: 40px auto;
+  text-align: center;
+  gap: 18px;
+}
+
+.news-title {
+  color: #870000;
+  max-width: 800px;
+  font-weight: 800;
+  font-size: 1.2rem;
+  margin-left: 10%;
+}
+
+.input-row {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.form-input {
+  background: #95D4D3;
+  border: none;
+  border-bottom: 3px solid #870000;
+  border-radius: 1px;
+  padding: 14px 18px;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  min-height: 56px;
+}
+
+.form-input::placeholder {
+  color: #7d4b4b;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.news-desc {
+  font-size: 14px;
+  color: #870000;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.sub-btn {
+  border: 1px solid #95D4D3;
+  border-radius: 50px;
+  background-color: #870000;
+  color: #f5e6cc;
+  font-size: 16px;
+  font-weight: 800;
+  padding: 10px 22px;
+  width: auto;
+  margin: 0 auto;
+  transition: all 0.5s ease;
+}
+
+.sub-btn:hover {
+  transform: scale(1.2);
+  background-color: #870000;
+  color: #f5e6cc;
+}
+
+footer {
+  overflow-x: hidden;
+  color: #f5e6cc;
+  padding: 36px 12px;
+  width: 100%;
+}
+
+.footer-description,
+.footer-info,
+.footer-links {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+.footer-socials a {
+  color: #f5e6cc;
+  font-size: 1.4rem;
+  margin: 0 10px;
+  transition: opacity 0.2s;
+}
+
+.footer-socials a:hover {
+  opacity: 0.8;
+}
+
+.mt-3 {
+  padding: 0 20px;
+}
+
+.col-md-4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 2%;
+}
+
+.footer-logo {
+  width: 60%;
+  max-width: 220px;
+  height: auto;
+  margin-bottom: 0;
+  margin-top: 0;
+   transform: scale(1);
+  
+  transition: transform 0.5s ease-out; 
+  
+  backface-visibility: hidden;
+  cursor: pointer;
+}
+.footer-logo:hover{
+  transform: scale(1.1);
+}
+
+.footer-social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.social-link i {
+  color: #f5e6cc !important;
+  font-size: 22px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.social-link:hover i {
+  opacity: 0.9;
+}
+
+
+/* Dark background overlay */
+.overlay {
+  display: none; 
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* The actual alert box */
+.alert-box {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  max-width: 400px;
+}
+
+.alert-box button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+
+/* Responsive breakpoints */
+@media (min-width: 1200px) {
+  .pill-nav {
+    padding: 12px 36px;
+  }
+
+  .nav-list a {
+    font-size: 1.05rem;
+  }
+
+  .rounded-image {
+    border-radius: 40px;
+  }
+}
+
+@media (max-width: 992px) {
+  .pill-nav {
+    padding: 10px 18px;
+  }
+
+  .nav-list a {
+    font-size: 0.95rem;
+  }
+
+  .logo {
+    width: 48%;
+    max-width: 360px;
+  }
+
+  .upper-background-img {
+    padding: 36px 18px;
+    margin-top: 80px;
+  }
+
+  .rounded-image {
+    max-height: 420px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-list {
+    gap: 10px;
+  }
+
+  .nav-list a {
+    font-size: 0.9rem;
+    padding: 6px 4px;
+  }
+
+  .pill-nav {
+    padding: 8px 12px;
+  }
+
+  .logo {
+    width: 70%;
+    max-width: 320px;
+  }
+
+  .upper-background-img {
+    margin: 60px 10px 20px;
+    padding: 28px 14px;
+    border-radius: 18px;
+  }
+
+  .rounded-image {
+    max-height: 320px;
+    border-radius: 40px;
+  }
+
+  .pill-label {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+
+  .lower-background-img {
+    max-width: 100%;
+  }
+
+  .input-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .form-input {
+    max-width: 100%;
+  }
+
+  .sub-btn {
+    width: 60%;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-list a {
+    font-size: 0.8rem;
+  }
+
+  .logo {
+    width: 80%;
+  }
+
+  .under-text h1 {
+    font-size: 1.25rem;
+  }
+
+  .booking-btn {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+
+  .rounded-image {
+    max-height: 260px;
+  }
+
+  .news-title {
+    font-size: 1rem;
+  }
+
+  .sub-btn {
+    width: 80%;
+  }
+}
